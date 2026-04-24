@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHANTOM OFC | Official Store</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0b0b0b;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding: 30px;
+            background: #151515;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+            border: 1px solid #222;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        .link-card {
+            display: block;
+            background: #1e1e1e;
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .link-card:hover {
+            background: #00d4ff;
+            color: #000;
+            transform: scale(1.03);
+            border-color: #00d4ff;
+        }
+        .setup-link { border-color: #ff9f43; color: #ff9f43; }
+        .setup-link:hover { background: #ff9f43; color: #000; }
+        .issue-link { border-color: #ff4757; color: #ff4757; }
+        
+        #contact-options {
+            display: none;
+            background: #222;
+            padding: 10px;
+            border-radius: 12px;
+            margin-top: -8px;
+            margin-bottom: 12px;
+            border: 1px dashed #ff4757;
+        }
+        .contact-btn {
+            display: block;
+            color: #eee;
+            text-decoration: none;
+            padding: 12px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #333;
+        }
+        .contact-btn:hover { color: #ff4757; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>PHANTOM OFC</h1>
+    <p class="subtitle">Official Purchase Portal</p>
+
+    <a href="https://t.me/ThePhantomOFC" target="_blank" class="link-card">1• CC Premium Purchase Click Here</a>
+    <a href="https://t.me/ThePhantomOFC" target="_blank" class="link-card">2• BR Mods Purchase Click Here</a>
+    <a href="https://t.me/ThePhantomOFC" target="_blank" class="link-card">3• HAXX-CKER Mod Purchase Click Here</a>
+    <a href="https://t.me/ThePhantomOFC" target="_blank" class="link-card">4• Drip Client Purchase Click Here</a>
+
+    <a href="https://t.me/thephantomcheatstutorials" target="_blank" class="link-card setup-link">5• Setup Videos Click Here</a>
+
+    <div class="link-card issue-link" onclick="toggleContact()">6• For Any Issues Click Here</div>
+    
+    <div id="contact-options">
+        <a href="mailto:Phantomcheatzofcowner@gmail.com" class="contact-btn">1• Email (Gmail)</a>
+        <a href="https://t.me/Cheatzs_exe" target="_blank" class="contact-btn">2• Telegram DM (@Cheatzs_exe)</a>
+    </div>
+</div>
+
+<script>
+    function toggleContact() {
+        var x = document.getElementById("contact-options");
+        x.style.display = (x.style.display === "block") ? "none" : "block";
+    }
+</script>
+
+</body>
+</html>
