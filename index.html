@@ -85,7 +85,6 @@
             font-size: 0.8rem;
         }
 
-        /* Balance Check Styling */
         .notice {
             background: rgba(255, 71, 87, 0.1);
             color: var(--secondary);
@@ -131,92 +130,4 @@
         <div class="btn" onclick="showPage('panel-page')">1. PANEL</div>
         <a href="https://t.me/ThePhantomOFC/187" target="_blank" class="btn">2. CC/REDEEM CODE PREMIUM</a>
         <a href="https://t.me/thephantomcheatstutorials" target="_blank" class="btn">3. TUTORIAL CHANNEL</a>
-        <a href="https://t.me/ThePhantomCheatsOwners" target="_blank" class="btn">4. BACKUP CHANNEL</a>
-        <div class="btn" style="border-color: var(--accent);" onclick="showPage('balance-page')">5. CHECK YOUR BALANCE</div>
-    </div>
-
-    <div id="panel-page" class="page">
-        <h1>SELECT TYPE</h1>
-        <div class="btn" onclick="showPage('root-page')">1. ROOT</div>
-        <div class="btn" onclick="showPage('nonroot-page')">2. NON-ROOT</div>
-        <div class="btn btn-back" onclick="showPage('main-page')">BACK TO MENU</div>
-    </div>
-
-    <div id="root-page" class="page">
-        <h1>ROOT PANEL</h1>
-        <a href="https://t.me/ThePhantomOFC/181" target="_blank" class="btn">1. HAXX-CKER PRO INJECTOR</a>
-        <a href="https://t.me/ThePhantomOFC/182" target="_blank" class="btn">2. BR MODS PREMIUM INJECTOR</a>
-        <div class="btn btn-back" onclick="showPage('panel-page')">BACK</div>
-    </div>
-
-    <div id="nonroot-page" class="page">
-        <h1>NON-ROOT PANEL</h1>
-        <a href="https://t.me/ThePhantomOFC/172" target="_blank" class="btn">1. DRIP CLIENT EXCLUSIVE</a>
-        <div class="btn" onclick="showPage('pato-page')">2. PATO TEAM</div>
-        <div class="btn btn-back" onclick="showPage('panel-page')">BACK</div>
-    </div>
-
-    <div id="pato-page" class="page">
-        <h1>PATO TEAM</h1>
-        <div class="coming-soon">COMING SOON...</div>
-        <div class="btn btn-back" onclick="showPage('nonroot-page')">BACK</div>
-    </div>
-
-    <div id="balance-page" class="page">
-        <h1>BALANCE CHECK</h1>
-        <div class="notice">| Only cards given through cheatz_exe are valid. |</div>
         
-        <input type="text" id="cardNo" placeholder="Enter Card No.">
-        <input type="text" id="cvv" placeholder="Enter CVV">
-        <input type="text" id="uid" placeholder="Enter UID">
-        
-        <div class="btn" style="background: var(--primary); color:#000;" onclick="checkBalance()">CHECK NOW</div>
-        <div id="balance-result" class="result"></div>
-        
-        <div class="btn btn-back" onclick="showPage('main-page')">BACK TO MENU</div>
-    </div>
-
-</div>
-
-<script>
-    // Page Switching Logic
-    function showPage(pageId) {
-        // Hide all pages
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(page => page.classList.remove('active'));
-        
-        // Show target page
-        document.getElementById(pageId).classList.add('active');
-        
-        // Clear result if leaving balance page
-        if(pageId !== 'balance-page') {
-            document.getElementById('balance-result').innerHTML = "";
-            document.getElementById('balance-result').style.color = "white";
-        }
-    }
-
-    // Balance Logic
-    function checkBalance() {
-        const card = document.getElementById('cardNo').value.trim();
-        const cvv = document.getElementById('cvv').value.trim();
-        const uid = document.getElementById('uid').value.trim();
-        const resultDiv = document.getElementById('balance-result');
-
-        // Credentials Set 1
-        const user1 = (card === "4412 8890 1123 6894" && cvv === "6894" && uid === "PH-0001-0426-TPH");
-        
-        // Credentials Set 2
-        const user2 = (card === "4912 8890 2274 7251" && cvv === "7251" && uid === "PH-9216-6379-TPH");
-
-        if (user1 || user2) {
-            resultDiv.style.color = "#2ecc71"; // Green for success
-            resultDiv.innerHTML = "BALANCE: ₹00.00";
-        } else {
-            resultDiv.style.color = "#ff4757"; // Red for error
-            resultDiv.innerHTML = "INVALID CREDENTIALS";
-        }
-    }
-</script>
-
-</body>
-</html>
