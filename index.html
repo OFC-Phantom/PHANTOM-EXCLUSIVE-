@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHANTOM OFC | Official Store</title>
+    <title>PHANTOM OFC | PRO PORTAL</title>
     <style>
+        :root {
+            --primary: #00d4ff;
+            --secondary: #ff4757;
+            --accent: #ff9f43;
+            --bg: #0b0b0b;
+            --card: #151515;
+        }
+
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #0b0b0b;
+            background-color: var(--bg);
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
+
         .container {
             width: 90%;
             max-width: 400px;
             text-align: center;
             padding: 30px;
-            background: #151515;
+            background: var(--card);
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.7);
             border: 1px solid #222;
+            position: relative;
         }
+
         h1 {
             font-size: 1.8rem;
-            margin: 0;
-            color: #00d4ff;
+            color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 20px;
         }
-        .subtitle {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
+
+        .page { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .link-card {
+
+        .btn {
             display: block;
             background: #1e1e1e;
             color: white;
@@ -51,63 +66,155 @@
             font-weight: bold;
             font-size: 0.9rem;
             cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
         }
-        .link-card:hover {
-            background: #00d4ff;
+
+        .btn:hover {
+            background: var(--primary);
             color: #000;
             transform: scale(1.03);
-            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
-        .setup-link { border-color: #ff9f43; color: #ff9f43; }
-        .setup-link:hover { background: #ff9f43; color: #000; }
-        .issue-link { border-color: #ff4757; color: #ff4757; }
-        
-        #contact-options {
-            display: none;
-            background: #222;
+
+        .btn-back {
+            background: transparent;
+            border: 1px solid #444;
+            color: #888;
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Balance Check Styling */
+        .notice {
+            background: rgba(255, 71, 87, 0.1);
+            color: var(--secondary);
             padding: 10px;
-            border-radius: 12px;
-            margin-top: -8px;
-            margin-bottom: 12px;
-            border: 1px dashed #ff4757;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            margin-bottom: 20px;
+            border: 1px solid var(--secondary);
         }
-        .contact-btn {
-            display: block;
-            color: #eee;
-            text-decoration: none;
+
+        input {
+            width: 100%;
             padding: 12px;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+            text-align: center;
         }
-        .contact-btn:hover { color: #ff4757; }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .coming-soon {
+            color: var(--accent);
+            padding: 20px;
+            border: 1px dashed var(--accent);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>PHANTOM OFC</h1>
-    <p class="subtitle">Official Purchase Portal</p>
-
-    <a href="https://t.me/ThePhantomOFC/187" target="_blank" class="link-card">1• CC Premium Purchase Click Here</a>
-    <a href="https://t.me/ThePhantomOFC/186" target="_blank" class="link-card">2• BR Mods Purchase Click Here</a>
-    <a href="https://t.me/ThePhantomOFC/185" target="_blank" class="link-card">3• HAXX-CKER Mod Purchase Click Here</a>
     
-    <a href="https://t.me/ThePhantomOFC/172" target="_blank" class="link-card">4• Drip Client Purchase Click Here</a>
-
-    <a href="https://t.me/thephantomcheatstutorials" target="_blank" class="link-card setup-link">5• Setup Videos Click Here</a>
-
-    <div class="link-card issue-link" onclick="toggleContact()">6• For Any Issues Click Here</div>
-    
-    <div id="contact-options">
-        <a href="mailto:Phantomcheatzofcowner@gmail.com" class="contact-btn">1• Email (Gmail)</a>
-        <a href="https://t.me/Cheatzs_exe" target="_blank" class="contact-btn">2• Telegram DM (@Cheatzs_exe)</a>
+    <div id="main-page" class="page active">
+        <h1>PHANTOM OFC</h1>
+        <div class="btn" onclick="showPage('panel-page')">1. PANEL</div>
+        <a href="https://t.me/ThePhantomOFC/187" target="_blank" class="btn">2. CC/REDEEM CODE PREMIUM</a>
+        <a href="https://t.me/thephantomcheatstutorials" target="_blank" class="btn">3. TUTORIAL CHANNEL</a>
+        <a href="https://t.me/ThePhantomCheatsOwners" target="_blank" class="btn">4. BACKUP CHANNEL</a>
+        <div class="btn" style="border-color: var(--accent);" onclick="showPage('balance-page')">5. CHECK YOUR BALANCE</div>
     </div>
+
+    <div id="panel-page" class="page">
+        <h1>SELECT TYPE</h1>
+        <div class="btn" onclick="showPage('root-page')">1. ROOT</div>
+        <div class="btn" onclick="showPage('nonroot-page')">2. NON-ROOT</div>
+        <div class="btn btn-back" onclick="showPage('main-page')">BACK TO MENU</div>
+    </div>
+
+    <div id="root-page" class="page">
+        <h1>ROOT PANEL</h1>
+        <a href="https://t.me/ThePhantomOFC/181" target="_blank" class="btn">1. HAXX-CKER PRO INJECTOR</a>
+        <a href="https://t.me/ThePhantomOFC/182" target="_blank" class="btn">2. BR MODS PREMIUM INJECTOR</a>
+        <div class="btn btn-back" onclick="showPage('panel-page')">BACK</div>
+    </div>
+
+    <div id="nonroot-page" class="page">
+        <h1>NON-ROOT PANEL</h1>
+        <a href="https://t.me/ThePhantomOFC/172" target="_blank" class="btn">1. DRIP CLIENT EXCLUSIVE</a>
+        <div class="btn" onclick="showPage('pato-page')">2. PATO TEAM</div>
+        <div class="btn btn-back" onclick="showPage('panel-page')">BACK</div>
+    </div>
+
+    <div id="pato-page" class="page">
+        <h1>PATO TEAM</h1>
+        <div class="coming-soon">COMING SOON...</div>
+        <div class="btn btn-back" onclick="showPage('nonroot-page')">BACK</div>
+    </div>
+
+    <div id="balance-page" class="page">
+        <h1>BALANCE CHECK</h1>
+        <div class="notice">| Only cards given through cheatz_exe are valid. |</div>
+        
+        <input type="text" id="cardNo" placeholder="Enter Card No.">
+        <input type="text" id="cvv" placeholder="Enter CVV">
+        <input type="text" id="uid" placeholder="Enter UID">
+        
+        <div class="btn" style="background: var(--primary); color:#000;" onclick="checkBalance()">CHECK NOW</div>
+        <div id="balance-result" class="result"></div>
+        
+        <div class="btn btn-back" onclick="showPage('main-page')">BACK TO MENU</div>
+    </div>
+
 </div>
 
 <script>
-    function toggleContact() {
-        var x = document.getElementById("contact-options");
-        x.style.display = (x.style.display === "block") ? "none" : "block";
+    // Page Switching Logic
+    function showPage(pageId) {
+        // Hide all pages
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+        
+        // Show target page
+        document.getElementById(pageId).classList.add('active');
+        
+        // Clear result if leaving balance page
+        if(pageId !== 'balance-page') {
+            document.getElementById('balance-result').innerHTML = "";
+            document.getElementById('balance-result').style.color = "white";
+        }
+    }
+
+    // Balance Logic
+    function checkBalance() {
+        const card = document.getElementById('cardNo').value.trim();
+        const cvv = document.getElementById('cvv').value.trim();
+        const uid = document.getElementById('uid').value.trim();
+        const resultDiv = document.getElementById('balance-result');
+
+        // Credentials Set 1
+        const user1 = (card === "4412 8890 1123 6894" && cvv === "6894" && uid === "PH-0001-0426-TPH");
+        
+        // Credentials Set 2
+        const user2 = (card === "4912 8890 2274 7251" && cvv === "7251" && uid === "PH-9216-6379-TPH");
+
+        if (user1 || user2) {
+            resultDiv.style.color = "#2ecc71"; // Green for success
+            resultDiv.innerHTML = "BALANCE: ₹00.00";
+        } else {
+            resultDiv.style.color = "#ff4757"; // Red for error
+            resultDiv.innerHTML = "INVALID CREDENTIALS";
+        }
     }
 </script>
 
